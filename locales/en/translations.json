@@ -67,7 +67,8 @@
         "populars":"Populars",
         "zoomIn":"Zoom in",
         "favorites":"Favorites",
-        "cart":"Cart"
+        "cart":"Cart",
+        "priuses":"Toyota Prius parts"
     },
     "simillars": {
         "simillars":"Simillar products",
@@ -81,7 +82,8 @@
         "register":"Register",
         "forgotPassword":"Forget Password?",
         "userPlaceholder":"Enter user",
-        "passwordPlaceholder":"Enter password"
+        "passwordPlaceholder":"Enter password",
+        "toasterInfo":"Please register or login to access the system"
     },
     "errors": {
         "unauthorized":"You are not Authorized, please sign in or sign up",
@@ -126,5 +128,11 @@
         "search":"Search",
         "cart":"Cart",
         "user":"User"
+    },
+    "sliderd": {
+        "search":"Often searched",
+        "service":"To complete the service, we offer the product that is most popular at that moment",
+        "seeAll":"See all",
+        "detailed":"Detailed"
     }
 }

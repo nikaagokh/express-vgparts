@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 
-<body class="">
+<body class="{{detectMode mode}}">
     {{>header}}
     <div class="app-container">
         <div class="inner-wrapper">
@@ -26,10 +26,10 @@
                     </div>
                 </div>
             </div>
-            <div class="price-container">
+            <div class="price-container" style="display: {{#ifDesktop size}}block{{else}}none{{/ifDesktop}};">
                 <div class="price-wrapper">
                     <div class="price-flex">
-                        
+
                         <div class="price">
                             {{price.productPrice}}
                             <span class="oldPrice"></span>
@@ -46,20 +46,47 @@
                             <i class="material-symbols-outlined">local_shipping</i>
                             {{price.delivery}} + 15ლ
                         </div>
-                        
+
                         <div class="delivery">
                             <i class="material-symbols-outlined">phone</i>
                             555 555-555
                         </div>
                         <div class="button-actions">
-                            <a  class="button back-button button-cart" id="buy-button">{{price.buy}}</a>
+                            <a class="button back-button button-cart" id="buy-button">{{price.buy}}</a>
                             <a class="button cart-button button-buy" id="cart-button">{{price.ebuy}}</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="cartPrice-container fixedprice-container"
+                style="display: {{#ifMobile size}}block{{else}}none{{/ifMobile}};">
+                <div class="fixedprice-desc">
+                    <div class="cartPrice-prices">
+                        <div class="fixedprice-acc">
+                            <span class="fixedprice-gel" id="cartPrice-new"></span>
+                            <span class="fixedprice-gel">₾.</span>
+                        </div>
+                        <div class="fixedprice-old">
+                            <span class="fixedprice-gel" id="cartPrice-old"></span>
+                            <span class="fixedprice-gel">₾.</span>
+                        </div>
+                    </div>
+                    <div class="fixedprice-action">
+                        <button class="button fixedprice-button">
+                            <i class="material-symbols-outlined">phone</i>
+                            <a href="tel:+995558121999" class="fixedprice-number">558 121-999</a>
+                        </button>
+                        <a href="/{{lng}}/buy" class="button fixedprice-button" id="fixedpriceCart">
+                            <i class="material-symbols-outlined">payments</i>
+                            <span class="fixedprice-number">{{cartPrice.ebuy}}</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
+    {{mode}}
     {{>bottom}}
     {{>footer}}
     <div class="overlay-container"></div>

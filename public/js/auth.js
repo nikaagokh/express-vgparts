@@ -28,6 +28,9 @@ export class Auth {
     this.regButton = this.element.querySelector("#auth__register-button");
     this.closeButton = this.element.querySelector("#auth__close-button");
     this.headerTitle = this.element.querySelector(".auth__header-title");
+    this.toasterInfo = this.element.querySelector("#toasterInfo");
+    this.toasterWarning = this.element.querySelector("#toasterWarning");
+    this.warningMessage = '';
     this.listeners();
   }
   _createElement() {
@@ -44,6 +47,26 @@ export class Auth {
             </div>
         </div>
         <div class="auth__body">
+            <div class="toaster slide-down toaster-info" id="toasterInfo" style="display:block">
+              <div class="toaster-message">
+                <button class="button button-icon">
+                  <i class="material-symbols-outlined info-icon">info</i>
+                </button>
+                <div class="toaster-content">
+                  ${this.store.toasterInfo}
+                </div>
+              </div>
+            </div>
+            <div class="toaster slide-down toaster-warning" id="toasterWarning" style="display:none">
+              <div class="toaster-message">
+                <button class="button button-icon">
+                  <i class="material-symbols-outlined warning-icon">warning</i>
+                </button>
+                <div class="toaster-content">
+                  ${this.warningMessage}
+                </div>
+              </div>
+            </div>
             <div class="form">
                 <div class="auth-input-wrapper">
                     <label for="user-mail" class="input-label user-label">${this.store.user}</label>
@@ -63,8 +86,10 @@ export class Auth {
                         </div>
                     </div>
                 </div>
-                <button class="button button-success auth-button" id="auth__authorization-button">${this.store.authorization}</button>
-                <button class="button button-light auth-button register-button" id="auth__register-button">${this.store.register}</button>
+                <div class="auth-actions">
+                  <button class="button button-success auth-button" id="auth__authorization-button">${this.store.authorization}</button>
+                  <button class="button button-light reg-button register-button" id="auth__register-button">${this.store.register}</button>
+                </div>
             </div>
         </div>
     </div>

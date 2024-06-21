@@ -22,6 +22,7 @@ class OverlayService {
         this.searchMob = null;
         this.cartOverlay = null;
         this.authOverlay = null;
+        this.registerOverlay = null;
         this.overlayContainer = document.querySelector(".overlay-container");
         this.spinnerTemplate = `<svg class="spinner" width="35px" height="35px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
@@ -243,13 +244,15 @@ class OverlayService {
                 this.overlayContainer.appendChild(authDialogBackdrop);
                 authDialogBackdrop.addEventListener("click", () => {
                     this.authOverlay.detach();
+                    this.authOverlay = null;
                     authGlobalWrapper.remove();
                     authDialogBackdrop.remove();
-                    enableScroll()
+                    enableScroll();
                 })
         
                 this.authOverlay.close$.addEventListener("closed", () => {
                     this.authOverlay.detach();
+                    this.authOverlay = null;
                     authGlobalWrapper.remove();
                     authDialogBackdrop.remove();
                     enableScroll()
@@ -258,27 +261,30 @@ class OverlayService {
                 this.authOverlay.reg$.addEventListener("reg", async () => {
                     const store = await this.fetchStore('register');
                     const {globalWrapper:regGlobalWrapper, dialogBackdrop:regDialogBackdrop, dialogComponent:regDialogComponent} = this.createDialog();
-                    const reg = new Register(store);
-                    regDialogComponent.appendChild(reg.element);
+                    this.registerOverlay = new Register(store);
+                    regDialogComponent.appendChild(this.registerOverlay.element);
                     regDialogComponent.classList.add("overlay-pane");
                     regDialogComponent.classList.add("dialog-size");
                     regGlobalWrapper.appendChild(regDialogComponent);
                     this.overlayContainer.appendChild(regGlobalWrapper);
                     this.overlayContainer.appendChild(regDialogBackdrop);
-                    reg.listeners();
                     regDialogBackdrop.addEventListener("click", () => {
-                        reg.detach();
+                        this.registerOverlay.detach();
+                        this.registerOverlay = null;
                         this.overlayContainer.innerHTML = '';
                         enableScroll();
                     })
-                    reg.close$.addEventListener("closed", () => {
-                        reg.detach();
+                    this.registerOverlay.close$.addEventListener("closed", () => {
+                        this.registerOverlay.detach();
+                        this.registerOverlay = null;
                         regGlobalWrapper.remove();
                         regDialogBackdrop.remove();
                     })
-                    reg.submit$.addEventListener("submited", () => {
-                        reg.detach();
+                    this.registerOverlay.submit$.addEventListener("submited", () => {
+                        this.registerOverlay.detach();
+                        this.registerOverlay = null;
                         this.authOverlay.detach();
+                        this.authOverlay = null;
                         regGlobalWrapper.remove();
                         regDialogBackdrop.remove();
                         authDialogBackdrop.remove();

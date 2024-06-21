@@ -21,9 +21,13 @@
               <img src="{{aurl 'banner.jpg'}}" class="banner-img">
             </div>
             -->
+            <div class="banner-container">
+               <img src="{{aurl 'logo.png'}}" class="banner-img">
+            </div>
          {{>category}}
          {{>slider products=discounts category=slider.discounts hydration=(json discounts) path="discounted"}}
-         {{>slider products=populars category=slider.populars hydration=(json populars) path="popular"}}
+         {{>slider products=priuses category=slider.priuses hydration=(json priuses) path="prius"}}
+         {{>slider3d products=populars hydration=(json populars) path="popular"}}
       </div>
       <div class="home-skeleton" style="display:none;">
          <div class="cards">

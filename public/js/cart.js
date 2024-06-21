@@ -26,6 +26,10 @@ export class Cart {
             this.newPriceSpan.textContent = this.newPricey;
             this.oldPriceSpan.textContent = this.oldPricey;
             this.discountSpan.textContent = this.discount;
+            const newPriceSpan = document.querySelector("#cartPrice-new");
+            const oldPriceSpan = document.querySelector("#cartPrice-old");
+            newPriceSpan.textContent = this.newPricey;
+            oldPriceSpan.textContent = this.oldPricey;
             this.renderCartList();
         });
         
@@ -35,7 +39,6 @@ export class Cart {
         this.cartContainer.innerHTML = ''; 
             if(this.products.length > 0) {
                 this.emptyContainer.style.display = 'none';
-                this.priceContainer.style.display = 'block';
                 this.products.forEach((item, i) => {
                     const cartItem = document.createElement('div');
                     cartItem.className = 'cart-item';
@@ -72,7 +75,7 @@ export class Cart {
                     removeWrapperMd.onclick = () => this.removeItem(item);
     
                     const deleteIconMd = document.createElement('i');
-                    deleteIconMd.className = 'material-symbols-outlined';
+                    deleteIconMd.classList.add('material-symbols-outlined', 'c-crimson');
                     deleteIconMd.textContent = 'delete';
                     removeWrapperMd.appendChild(deleteIconMd);
     

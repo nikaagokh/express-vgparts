@@ -1,0 +1,59 @@
+<div class="slider3d-container">
+    <div class="slider3d-flex">
+        <div class="slider3d-desc">
+            <div class="slider3d-suggest">{{sliderd.search}}</div>
+            <div class="slider3d-service">{{sliderd.service}}</div>
+            <div class="slider3d-see-all">{{sliderd.seeAll}}</div>
+        </div>
+        <div class="slider3d-content">
+            <div class="slider3d-div">
+                {{#each products as |product i|}}
+                <div class="slider3d-cardFlex {{getClass i}}" data-id="{{i}}" style="display: {{isVisible i}};">
+                    <div class="slider3d-card">
+                        <div class="slider3d-wrapper">
+                            <div class="slider3d-img-wrapper">
+                                <img src="{{purl product.images.[0]}}" class="slider3d-img">
+                            </div>
+                            <div class="slider3d-description-wrapper">
+                                <div class="slider3d-description-title">
+                                    {{product.nameGeo}}
+                                </div>
+                                <div class="slider3d-stock">
+                                    {{#if product.available}}
+                                    <i class="material-symbols-outlined app-slider__availability-icon c-success">check</i>
+                                    {{#if product.type}}
+                                    <span></span>
+                                    {{else}}
+                                    <span></span>
+                                    {{/if}}
+                                    {{else}}
+                                    <i
+                                        class="material-symbols-outlined c-crimson">check_indeterminate_small</i>
+                                    {{#if product.type}}
+                                    <span></span>
+                                    {{else}}
+                                    <span></span>
+                                    {{/if}}
+                                    {{/if}}
+                                </div>
+                                <div class="slider3d-actions">
+                                <div class="slider3d-price">{{product.price}}₾</div>
+                                <a href="/{{../lng}}/product/{{product.id}}" class="slider3d-button">{{../sliderd.detailed}}</a>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <div class="slider3d-hydration" style="display: none;">{{hydration}}</div>
+            </div>
+            <button class="slider3d-left button button-icon button-bordered" id="slider3dLeft">
+                <i class="material-symbols-outlined">chevron_left</i>
+            </button>
+            <button class="slider3d-right button button-icon button-bordered" id="slider3dRight">
+                <i class="material-symbols-outlined">chevron_right</i>
+            </button>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
     const header = req.t('header');
     const category = req.t('category');
     const slider = req.t('slider');
+    const sliderd = req.t('sliderd');
     const bottom = req.t('bottom');
     const footer = req.t('footer');
     const mode = req.cookies.mode;
@@ -18,13 +19,15 @@ router.get("/", (req, res) => {
     const size = req.cookies.size;
     Promise.all([
         axios.get(`http://localhost:3001/${lng}/api/product/discounted?page=1&limit=12`),
+        axios.get(`http://localhost:3001/${lng}/api/product/prius?page=1&limit=12`),
+        axios.get(`http://localhost:3001/${lng}/api/category/roots`),
         axios.get(`http://localhost:3001/${lng}/api/product/popular?page=1&limit=12`),
-        axios.get(`http://localhost:3001/${lng}/api/category/roots`)
-    ]).then(([v1,v2,v3]) => {
+    ]).then(([v1,v2,v3, v4]) => {
         const {rows:discounts} = v1.data.response;
-        const {rows:populars} = v2.data.response;
+        const {rows:priuses} = v2.data.response;
+        const {rows:populars} = v4.data.response;
         const categories = v3.data.response;
-        res.render("index", {categories, discounts, populars, title:'VGParts.shop',lng, header, category, slider, footer, mode, reqPath, bottom, size});
+        res.render("index", {categories, discounts, priuses, populars, title:'VGParts.shop',lng, header, category, slider, footer, mode, reqPath, bottom, size, sliderd});
     })
     
 })
@@ -122,18 +125,21 @@ router.get("/groupby", (req, res) => {
 
  router.get("/filtered", (req, res) => {
     const yearIds = req.query.yearIds.split(',');
+    console.log(yearIds);
     const page = Number(req.query.page);
     const lng = req.language;
+    console.log(lng)
     const header = req.t('header');
     const errors = req.t('errors');
     const bottom = req.t('bottom');
     const footer = req.t('footer');
-    const size = req.cookies.size;
+    const size = req.cookies.size || 992;
     const mode = req.cookies.mode;
     const reqPath = req.url;
-    console.log(lngPath)
+    console.log(`http://localhost:3001/api/product/filtered?yearIds=${yearIds}&page=${page}`);
     axios.get(`http://localhost:3001/api/product/filtered?yearIds=${yearIds}&page=${page}`)
     .then(v1 => {
+        console.log(v1);
         const {rows:products} = v1.data.response;
         const {totalPages:pages} = v1.data.response;
         const hydration = JSON.stringify(products);
@@ -141,6 +147,8 @@ router.get("/groupby", (req, res) => {
         const isLastPage = (page === pages.length);
         const onePage = (pages.length === 1);
         res.render("filter", {products, pages, hydration, isFirstPage, isLastPage, page, onePage, yearIds:req.query.yearIds, lng, header, footer, mode, errors, reqPath, bottom, size});
+    }).catch(err => {
+        console.log('errr');
     })
  })
 
@@ -148,13 +156,13 @@ router.get("/groupby", (req, res) => {
     const lng = req.language;
     const header = req.t('header');
     const price = req.t('price');
-    const fixed = req.t('fixedPrice');
+    const fixedPrice = req.t('fixedPrice');
+    const cartPrice = req.t('cartPrice');
     const bottom = req.t('bottom');
     const footer = req.t('footer');
     const token = req.cookies.token;
-    const mode = 'en'
-    const size = 903;
-    console.log(mode);
+    const mode = req.cookies.mode;
+    const size = req.cookies.size;
     axios.get(`http://localhost:3001/api/product/cart`, {
         headers: {
             'Authorization':`Bearer ${token}`
@@ -171,9 +179,7 @@ router.get("/groupby", (req, res) => {
         res.render("cartSSR", {lng, header, footer, mode, size, price, bottom, products, priceObj});
     })
     .catch(err => {
-        const products = [];
-        const priceObj = {newPrice:0, oldPrice:0};
-        res.render("cartSPA", {lng, header, footer, mode, size, price, bottom, products, priceObj});
+        res.render("cartSPA", {lng, header, footer, mode, size, price, bottom, cartPrice});
     })
     
     //res.render("cart", {lng, header, footer, mode, size, price, bottom});

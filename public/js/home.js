@@ -5,6 +5,6 @@ export class Home {
         this.loaded = false;
         this.products = null;
         new Slider('discounted');
-        new Slider('popular')
+        new Slider('prius')
     }
 }

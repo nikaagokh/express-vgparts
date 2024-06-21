@@ -10,7 +10,6 @@ export class Register {
         this.submit$ = document.createElement("div");
         this.loaded = false;    
         this.store = store;  
-        console.log(this.store)
         this.element = this._createElement();
         this.contentContainer = this.element.querySelector(".auth-content-container");
         this.errorMessage = this.element.querySelector(".error-message");
@@ -161,8 +160,8 @@ export class Register {
     }
 
     listeners() {
-        this.closeButton = document.querySelector("#register__close-button");
-        this.registerButton = document.querySelector("#register__register-button");
+        this.closeButton = this.element.querySelector("#register__close-button");
+        this.registerButton = this.element.querySelector("#register__register-button");
         this.closeButton.addEventListener("click", () => {
             this.close$.dispatchEvent(new CustomEvent("closed"));
         })

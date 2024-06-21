@@ -5,12 +5,15 @@ import { Bottom } from "./bottom.js";
 import { FixedPrice } from "./fixedprice.js";
 import { renderBottomConditionally } from "../utils/render.js";
 import cookieService from "./services/cookies.js";
+import { Chat } from "./chat.js";
+import { Slider3d } from "./slider3d.js";
 
 
 async function init() {
     new Header();
     new Home();
     new Bottom();
+    new Slider3d();
     cookieService.setCookie('size', window.innerWidth);
     renderBottomConditionally();
     window.addEventListener('resize', () => {

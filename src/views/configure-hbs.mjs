@@ -134,5 +134,22 @@ export const configureHbs = () => {
         return options.inverse(this);
     }
   })
+
+  hbs.registerHelper("getClass", function(index) {
+    if(index === 0) {
+        return 'middle-left';
+    } else if(index === 1) {
+        return 'slider3d-active';
+    } else {
+        return 'middle-right';
+    }
+  })
+  hbs.registerHelper("isVisible", function(index) {
+    if(index === 0 || index === 1 || index === 2) {
+        return 'block';
+    } else {
+        return 'none';
+    }
+  })
 }
 

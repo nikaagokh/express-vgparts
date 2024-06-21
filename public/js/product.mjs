@@ -11,7 +11,6 @@ function init() {
     new Bottom();
     new FixedPrice();
     cookieService.setCookie('size', window.innerWidth);
-    console.log(window.innerWidth)
     //renderBottomConditionally();
     //renderFixedPriceConditionally();
     //renderPriceConditionally();
