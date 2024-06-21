@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+
+<body class="{{detectMode mode}}">
+    {{>header}}
+    <div class="app-container">
+        <div class="submenu-container">
+
+            <div class="submenu-wrapper">
+                {{#each subcategories as |item i|}}
+                {{#each item.cyear as |year|}}
+                <a class="submenu-card"
+                    href="/{{../../lng}}/category?yearId={{year.yearId}}&categoryId={{item.id}}&page=1">
+                    <div class="submenu-card-flexcol">
+                        <div class="submenu-img-wrapper">
+                            <img class="submenu-img" src="{{surl year.imageUrl}}">
+                        </div>
+                        <div class="desci">
+                            <span class="title">{{item.name}}</span>
+                        </div>
+                    </div>
+                </a>
+                {{/each}}
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+    {{>bottom}}
+    {{>footer}}
+    <div class="overlay-container"></div>
+    <div class="toast-container"></div>
+    <script src="/public/js/subcategory.mjs" type="module"></script>
+</body>

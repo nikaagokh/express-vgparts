@@ -1,0 +1,30 @@
+<div class="price-container" style="display:{{#ifDesktop size}}block{{else}}none{{/ifDesktop}};">
+    <div class="price-wrapper">
+        <div class="price-flex">
+            <div class="price">
+               {{price.productPrice}}
+                <span>{{priceObj.oldPrice}}₾</span>
+            </div>
+            <div class="price sale">
+                {{price.productDiscount}}
+                <span>-{{priceObj.discountPrice}}₾</span>
+            </div>
+            <div class="price total">
+                {{price.productTotal}}
+                <span>{{priceObj.newPrice}}₾</span>
+            </div>
+            <div class="delivery">
+                <i class="material-symbols-outlined">local_shipping</i>
+                {{price.delivery}} + 15₾
+            </div>
+            <div class="delivery">
+                <i class="material-symbols-outlined">phone</i>
+                555 555-555
+            </div>
+            <div class="button-actions">
+                <button class="button back-button button-cart" id="buy-button">{{price.inCart}}</button>
+                <button class="button cart-button button-buy" id="cart-button">{{price.buy}}</button>
+            </div>
+        </div>
+    </div>
+</div>

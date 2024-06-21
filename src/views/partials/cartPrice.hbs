@@ -1,0 +1,23 @@
+<div class="fixedprice-container" style="display: {{#ifMobile size}}flex{{else}}none{{/ifMobile}};">
+    <div class="fixedprice-desc">
+        <div class="fixedprice-acc">
+            <span class="fixedprice-gel">{{#compare products.length '>' 0}} {{priceObj.newPrice}} {{/compare}}</span>
+            <span class="fixedprice-gel">₾.</span>
+        </div>
+        <div class="fixedprice-old">
+            <span class="fixedprice-gel"></span>
+            <span class="fixedprice-gel">₾.</span>
+        </div>
+        <div class="fixedprice-action">
+          <button class="button fixedprice-button">
+             <i class="material-symbols-outlined">phone</i>
+             <a href="tel:+995558121999" class="fixedprice-number">558 121-999</a>
+          </button>
+          <button class="button fixedprice-button" id="fixedpriceCart">
+            <i class="material-symbols-outlined">payments</i>
+            <span class="fixedprice-number"></span>
+          </button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,126 @@
+{
+    "header": {
+        "search":"ძიება",
+        "filter":"ფილტრი",
+        "favorites":"ფავორიტები",
+        "cart":"კალათა",
+        "account":"ანგარიში",
+        "categories":"კატეგორიები",
+        "georgian":"ქართული",
+        "english":"ინგლისური"
+    },
+    "category": {
+        "categories":"კატეგორიები"
+    },
+    "footer": {
+        "offering":"ჩვენ გთავაზობთ",
+        "forUsers":"მომხმარებლებისთვის",
+        "contactUs":"დაგვიკავშირდით",
+        "workingHours":"სამუშაო საათები",
+        "carRent":"ავტომანქანის ქირაობა",
+        "purchaseParts":"ავტონაწილის შეძენა",
+        "purchaseAbroad":"ავტონაწილის გამოწერა საზღვარგარეთიდან",
+        "consultation":"ექსპერტის კონსულტაცია",
+        "register":"რეგისტრაცია",
+        "authorization":"ავტორიზაცია",
+        "aboutUs":"ჩვენს შესახებ",
+        "location":"შანდორ პეტეფის ქუჩა, 9",
+        "workingDays":"ორშაბათი-შაბათი",
+        "workingHour":"10:00სთ - 19:00სთ"
+    },
+    "login": {
+        "user":"მომხმარებელი",
+        "password":"პაროლი",
+        "forgotPassword":"დაგავიწყდათ პაროლი?"
+    },
+    "register": {
+        "name":"სახელი",
+        "surname":"გვარი",
+        "email":"მეილი",
+        "password":"პაროლი",
+        "repeatPassword":"გაიმეორეთ პაროლი",
+        "register":"რეგისტრაცია"
+    },
+    "info": {
+        "name":"სახელი",
+        "condition":"მდგომარეობა",
+        "description":"აღწერა"
+    },
+    "price": {
+        "inCart":"კალათაში",
+        "buy":"ყიდვა",
+        "productPrice":"პროდუქტის ღირებულება",
+        "productDiscount":"ფასდაკლება",
+        "productTotal":"საბოლოო ღირებულება",
+        "delivery":"მიწოდება",
+        "ebuy":"გამოწერა",
+        "usd":"$",
+        "gel":"₾"
+    },
+    "slider": {
+        "categories":"კატეგორიები",
+        "inStock":"მარაგშია",
+        "outStock":"ამოიწურა",
+        "seeAll":"ყველას ნახვა",
+        "discounts":"ფასდაკლებები",
+        "populars":"პოპულარულები",
+        "zoomIn":"გადიდება",
+        "favorites":"ფავორიტები",
+        "cart":"კალათა"
+    },
+    "simillars": {
+        "simillars":"მსგავსი პროდუქტები",
+        "inStock":"მარაგშია",
+        "outStock":"ამოიწურა"
+    },
+    "auth": {
+        "user":"მომხმარებელი",
+        "password":"პაროლი",
+        "authorization":"ავტორიზაცია",
+        "register":"რეგისტრაცია",
+        "forgotPassword":"დაგავიწყდათ პაროლი?",
+        "userPlaceholder":"შეიყვანეთ მეილი",
+        "passwordPlaceholder":"შეიყვანეთ პაროლი"
+    },
+    "errors": {
+        "unauthorized":"თქვენ არ ხართ ავტორიზებული, გთხოვთ გაიაროთ რეგისტრაცია ან ავტორიზაცია",
+        "empty":"მსგავსი კატეგორიის პროდუქტი ვერ მოიძებნა"
+    },
+    "filter": {
+        "filter":"ფილტრი",
+        "brand":"მწარმოებელი",
+        "model":"მოდელი",
+        "year":"მოდელის წელი",
+        "filterError":"გთხოვთ შეავსეთ ყველა ველი"
+    },
+    "zoom": {
+        "gallery":"გალერია"
+    },
+    "minicart": {
+        "productsPrice":"პროდუქტების ღირებულება",
+        "productsDiscount":"ფასდაკლება",
+        "totalPrice":"საბოლოო ღირებულება",
+        "quantity":"რაოდენობა",
+        "myCart":"პირადი კალათა",
+        "buy":"ყიდვა",
+        "detailed":"დეტალურად",
+        "empty":"თქვენი კალათა ცარიელია!"
+    },
+    "language": {
+        "georgian":"ქართული",
+        "english":"ინგლისური"
+    },
+    "fixedPrice": {
+        "cart":"In cart"
+    },
+    "cartPrice": {
+        "ebuy":"გამოწერა"
+    },
+    "bottom": {
+        "home":"მთავარი",
+        "menu":"კატალოგი",
+        "search":"ძიება",
+        "cart":"კალათა",
+        "user":"ანგარიში"
+    }
+}

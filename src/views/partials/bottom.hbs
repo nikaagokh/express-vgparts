@@ -1,0 +1,24 @@
+<div class="bottom-container" style="display: {{#ifMobile size}}flex{{else}}none{{/ifMobile}};">
+    <button class="bottom button button-icon-desktop" id="b-homeButton">
+        <i class="material-symbols-outlined">home</i>
+        <span class="bottom-text">{{bottom.home}}</span>
+    </button>
+    <button class="bottom button button-icon-desktop" id="b-menuButton">
+        <i class="material-symbols-outlined">menu</i>
+        <span class="bottom-text">{{bottom.menu}}</span>
+    </button>
+    <button class="bottom button button-icon-desktop outside" id="b-searchButton">
+        <i class="material-symbols-outlined">search</i>
+        <span class="bottom-text">{{bottom.search}}</span>
+    </button>
+    <button class="bottom button button-icon-desktop" id="b-cartButton">
+        <i class="material-symbols-outlined">card_travel</i>
+        <span class="bottom-text">{{bottom.cart}}</span>
+        <span class="badge flex justify-c align-c" id="b-badgeCart">0</span>
+    </button>
+
+    <button class="bottom button button-icon-desktop" id="b-userButton">
+        <i class="material-symbols-outlined">perm_identity</i>
+       <span class="bottom-text">{{bottom.user}}</span>
+    </button>
+</div>

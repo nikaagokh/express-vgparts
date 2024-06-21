@@ -1,0 +1,61 @@
+{{>header}}
+<div class="app-container">
+  {{!--
+  <div style="display: {{#if loaded}}{{loaded}}{{else}}none{{/if}};">salami</div>
+  <div>{{json basicArray}}</div>
+
+  {{#each basicArray}}
+  {{link this ../loaded}}
+  {{/each}}
+  {{./link}}
+  {{> (mobsize 'header' basicArray.[0]) datatable=./link hydration=(json basicArray)}}
+  --}}
+  {{#each basicArray}}
+  {{>footer loaded=../loaded basicArray=../basicArray}}
+  {{/each}}
+  <div>above noop</div>
+  {{#list basicArray}}
+  <div>{{name}}</div>
+  <div>{{gvari}}</div>
+  {{else}}
+  <div>aaa</div>
+  {{/list}}
+  {{#unless loaded}}
+  <div>aba ra</div>
+  {{else}}
+  <div>ad</div>
+  {{/unless}}
+  <div>
+    {{#each object}}
+    <div>{{@key}}</div>
+    <div>{{this}}</div>
+    <div>{{@first}}</div>
+    {{/each}}
+  </div>
+</div>
+{{>footer}}
+
+{{#compare product.available '!==' 0}}
+<i class="material-symbols-outlined app-slider__availability-icon">check</i>
+{{#compare product.type '===' 0}}
+{{!--<span class="{{#compare product.id '>' 700}}abracadabra1{{else}}abracadabra2{{/compare}}">მარაგშია</span>--}}
+<span>მარაგშია</span>
+{{else}}
+<span>გასაქირავებელი</span>
+{{/compare}}
+{{else}}
+<i class="material-symbols-outlined app-slider__not-availability-icon">check_indeterminate_small</i>
+<span>ამოიწურა</span>
+{{/compare}}
+
+{{#compare product.price '<' 13}} {{#compare product.price '>=' 12}} <div>c</div>
+  {{else}}
+  <div>daa</div>
+  {{/compare}}
+  {{else}}
+  {{#compare product.price '===' 12}}
+  <div>c</div>
+  {{else}}
+  <div>k</div>
+  {{/compare}}
+  {{/compare}}

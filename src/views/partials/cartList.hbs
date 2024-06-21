@@ -1,0 +1,47 @@
+{{#each products}}
+<div class="cart-item">
+    <div class="img-wrapper">
+        <img src="{{purl this.images.[0]}}" class="img">
+        {{#compare this.discount '>' 0}}
+        <div class="price-discount">-{{this.discount}}%</div>
+        {{/compare}}
+    </div>
+    <div class="description-wrapper">
+        <div class="description">{{this.nameGeo}}</div>
+        <div class="code"></div>
+    </div>
+    <div class="remove-wrapper md">
+        <i class="material-symbols-outlined c-crimson">delete</i>
+    </div>
+    <div class="action-wrapper">
+        <div class="action-flex">
+            <div class="add-remove-flex">
+                <div class="add-wrapper">
+                    <button class="minus-button"><span class="add">-</span></button>
+                    <div class="number-button">
+                        <div class="numb">{{this.quantity}} შეკვრა</div>
+                    </div>
+                    <button class="plus-button" ><span class="add">+</span></button>
+                </div>
+            </div>
+            <div class="price-wrapper cart-price-wrapper">
+                <div class="price-flex cart-price-flex">
+                    
+                        <span class="">{{this.price}}</span>
+                   
+                        <span class="fl dot"></span>
+                   
+                    <span class="price-gel">₾.</span>
+                </div>
+                
+                    <div class="oldpric">
+                        <span class="price old">{{this.price}}</span>
+                        <span class="price-gel">₾.</span>
+                    </div>
+             
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/each}}

@@ -1,0 +1,78 @@
+<div class="app-slider__container {{path}}__container">
+    <div class="app-slider__title">
+        <h4 class="app-slider__category">{{category}}</h4>
+        <div class="app-slider__nav">
+            <button class="button button-icon back-white app-slider__prev">
+                <i class="material-symbols-outlined">keyboard_arrow_left</i>
+            </button>
+            <button class="button button-icon back-white app-slider__next">
+                <i class="material-symbols-outlined">keyboard_arrow_right</i>
+            </button>
+        </div>
+    </div>
+    <div class="app-slider__body">
+        <section class="{{category}}__flex app-slider__flex">
+            {{#each products}}
+                <article class="app-slider__card" data-id="{{this.id}}">
+                    <a href="/{{../lng}}/product/{{this.id}}" class="app-slider__link" data-link>
+                        <div class="app-slider__image-wrapper">
+                            <img src="{{purl this.images.[0]}}" class="app-slider__image" width="120" height="60">
+                        </div>
+                        <div class="app-slider__product-desc">
+                            <h4 class="app-slider__product-title">
+                                {{#compare ../lng '==' 'en'}}
+                                {{this.nameEng}}
+                                {{else}}
+                                {{this.nameGeo}}
+                                {{/compare}}
+                            </h4>
+                            <div class="app-slider__product-available">
+                                {{#if this.available}}
+                                 <i class="material-symbols-outlined app-slider__availability-icon">check</i>
+                                 {{#if this.type}}
+                                  <span>{{../slider.inStock}}</span>
+                                 {{else}}
+                                  <span>{{../slider.inStock}}</span>
+                                {{/if}}
+                               {{else}}
+                                <i class="material-symbols-outlined app-slider__not-availability-icon">check_indeterminate_small</i>
+                                {{#if this.type}}
+                                  <span>{{../slider.outStock}}</span>
+                                {{else}}
+                                  <span>{{../slider.outStock}}</span>
+                                {{/if}}
+                               {{/if}}
+                            </div>
+                        </div>
+                        <div class="app-slider__product-price">
+                            {{this.price}}₾
+                        </div>
+                    </a>
+                    <div class="app-slider__actions">
+                        <div class="flex">
+                            <button class="button button-icon" id="app-slider__zoom">
+                                <i class="material-symbols-outlined">zoom_in</i>
+                                <span class="tooltip">{{slider.zoomIn}}</span>
+                            </button>
+                            <button class="button button-icon" id="app-slider__favorite">
+                                <i class="material-symbols-outlined">favorite</i>
+                                <span class="tooltip">{{slider.favorites}}</span>
+                            </button>
+                        </div>
+                        <button class="button button-icon" id="app-slider__cart">
+                            <i class="material-symbols-outlined">shopping_bag</i>
+                            <span class="tooltip">{{slider.cart}}</span>
+                        </button>
+                    </div>
+                </article>
+            {{/each}}
+            <div class="slider-{{path}}" style="display:none;">{{hydration}}</div>
+        </section>
+    </div>
+    <div class="app-slider__see-all-wrapper">
+        <a class="app-slider__see-all-flex" href="/{{lng}}/groupby?path={{path}}&group={{category}}&offset=1" data-link>
+            {{slider.seeAll}}
+            <i class="material-symbols-outlined">keyboard_arrow_right</i>
+        </a>
+    </div>
+</div>

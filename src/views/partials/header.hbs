@@ -1,0 +1,116 @@
+<div class="header">
+    
+    <div class="header__wrapper flex align-c">
+        <div class="header__left align-c">
+            <button class="button button-icon header__category-mobile">
+                <i class="material-symbols-outlined">menu</i>
+            </button>
+            <a href="/{{lng}}/" class="header__logo" data-link>
+                <div class="header__logo-wrapper">
+                    VG <span class="header__logo-content">Parts</span>
+                </div>
+                <img src="{{aurl 'cara.png'}}" alt="ავტომანქანის ლოგო" width="100" height="50">
+            </a>
+            <button class="button button-bordered header__category-desktop">
+                <i class="material-symbols-outlined">menu</i>
+                <span class="header-action-text">{{header.categories}}</span>
+                <i class="material-symbols-outlined">keyboard_arrow_down</i>
+            </button>
+            <div class="language-container">
+             <button class="button button-bordered language-changer">
+                <i class="material-symbols-outlined">public</i>
+                 <span class="language-title">{{#if (isEnglish lng)}}EN{{else}}GE{{/if}}</span>
+                <i class="material-symbols-outlined">arrow_drop_down</i>
+             </button>
+             <ul role="listbox" id="language-list" class="select-dropdown language-list">
+                <li role="option" value="KA" class="language-listitem list-item {{activeLng 'ka' lng}}">
+                    <a href="/ka{{reqPath}}">{{header.georgian}}</a>
+                </li>
+                <li role="option" value="EN" class="language-listitem list-item {{activeLng 'en' lng}}">
+                    <a href="/en{{reqPath}}">{{header.english}}</a>
+                </li>
+             </ul>
+            </div>
+
+        </div>
+        <div class="header__right">
+            <button class="button button-icon mobile header__input-search-icon">
+                <i class="material-symbols-outlined">search</i>
+            </button>
+            <div class="header__input-wrapper desktop">
+                <i class="material-symbols-outlined header__input-icon">search</i>
+                <input type="text" placeholder="{{header.search}}" class="header__input-search">
+            </div>
+            <div class="header__right-context">
+
+            <div class="header__right-wrapper-mobile">
+                <div class="mobile-button__wrapper">
+                <div class="header__button-overlay">
+                    <button class="button button-icon" id="headerFilter">
+                        <i class="material-symbols-outlined">filter_alt</i>
+                        <span class="tooltip">{{header.filter}}</span>
+                    </button>
+                </div>
+                <div class="header__button-overlay">
+                    <button class="button button-icon" id="headerFavorite">
+                        <i class="material-symbols-outlined">favorite</i>
+                        <span class="tooltip">{{header.favorites}}</span>
+                        <span class="badge flex justify-c align-c" id="badgeFavorite">0</span>
+                    </button>
+                </div>
+                <div class="header__button-overlay">
+                    <button class="button button-icon" id="headerCart">
+                        <i class="material-symbols-outlined">shopping_bag</i>
+                        <span class="tooltip">{{header.cart}}</span>
+                        <span class="badge flex justify-c align-c" id="badgeCart">0</span>
+                    </button>
+                </div>
+                <div class="header__button-overlay">
+                    <button class="button button-icon desktop" id="headerUser">
+                        <i class="material-symbols-outlined">person</i>
+                        <span class="tooltip">{{header.account}}</span>
+                    </button>
+                </div>
+                </div>
+            </div>
+            <div class="header__right-wrapper-desktop">
+                <div class="header__filter-button-wrapper">
+                    <button class="button button-icon-desktop " id="headerFilter">
+                        <i class="material-symbols-outlined">filter_alt</i>
+                        <span class="header-action-text">{{header.filter}}</span>
+                    </button>
+                </div>
+                <div class="header__favorites-button-wrapper relative">
+                    <button class="button button-icon-desktop" id="headerFavorite">
+                        <i class="material-symbols-outlined">favorite</i>
+                        <span class="badge" id="badgeFavorite">0</span>
+                        <span class="header-action-text">{{header.favorites}}</span>
+                    </button>
+                </div>
+                <div class="header__cart-button-wrapper relative">
+                    <button class="button button-icon-desktop" id="headerCart">
+                        <i class="material-symbols-outlined">shopping_bag</i>
+                        <span class="badge" id="badgeCart">0</span>
+                        <span class="header-action-text">{{header.cart}}</span>
+                    </button>
+                </div>
+                <div class="header__user-button-wrapper">
+                    <button class="button button-icon-desktop" id="headerUser">
+                        <i class="material-symbols-outlined">person</i>
+                        <span class="header-action-text">{{header.account}}</span>
+                    </button>
+                </div>
+            </div>
+            <div class="mode">
+                    <input type="checkbox" class="checkbox" id="checkbox" {{isChecked mode}}>
+                    <label for="checkbox" class="checkbox-label {{#compare mode '===' 'light'}}check-light{{else}}check-dark {{/compare}}">
+                        <i class="material-symbols-outlined icon-mode">sunny</i>
+                        <i class="material-symbols-outlined icon-mode">dark_mode</i>
+                        <span class="ball"></span>
+                    </label>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

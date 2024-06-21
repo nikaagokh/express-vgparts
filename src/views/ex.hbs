@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <div class="search-container">
+    <div class="search-inputwrapper">
+        <div class="search-input">
+            <i class="material-symbols-outlined header__input-icon">search</i>
+            <input type="text" placeholder="{{header.search}}" class="header__input-search">
+        </div>
+      
+    </div>
+    <div class="search-content">
+        <div class="list">
+            <ng-container *ngIf="productList.length > 0 && loaded">
+                <ng-container *ngFor="let item of productList; let i = index">
+                    <div class="list-item" (click)="selectProduct(item.id)">
+                    
+                        <img src="{{url}}{{item.images[0]?.path}}" class="list-img" (click)="slideLeft(true)">
+                        <span class="list-content">
+                            <h3 class="list-title">{{item.nameGeo}} ({{item.categorY?.name}})</h3>
+                            <p class="list-price">{{item.price}}₾</p>
+                        </span>
+                        
+                    </div>
+                    <mat-divider [inset]="true"></mat-divider>
+                </ng-container>
+            </ng-container>
+            <div class="actions-flex" *ngIf="productList.length >= 24 && !noMore && loaded">
+                <button mat-raised-button color="primary" class="search-more" (click)="loadMore()">მეტის ნახვა</button>
+            </div>
+            <ng-container *ngIf="productList.length > 0 && !loaded">
+                <mat-spinner class="centered"></mat-spinner>
+            </ng-container>
+            <ng-container *ngIf="productList.length === 0">
+                <div class="not-exist-wrapper">
+                    <div class="not-exist" *ngIf="notexist">
+                        <img src="../../../assets/search4.png" class="not-exist-img">
+                        <div class="not-exist-title">მსგავსი პროდუქტი ვერ მოიძებნა!</div>
+                    </div>
+                    
+                    <div class="famous-searches">
+                        <div class="top-wrapper">
+                            <span class="top">
+                                Top კატეგორიები
+                            </span>
+                        </div> 
+                        <div class="searched-flex">
+                            <div class="col">
+                                <div class="searched-wrapper"(click)="changeRoute('prius', 'პრიუსის ავტონაწილები')">
+                                    <img src="../../../assets/carpart.png" height="25" width="25">
+                                    პრიუსის ნაწილები
+                                </div>
+                                <div class="searched-wrapper" (click)="changeRoute('cars', 'ავტომანქანები')">
+                                    <img src="../../../assets/carpart5.png" height="25" width="25">
+                                    ავტომანქანები
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="searched-wrapper" (click)="changeRoute('discounted', 'ფასდაკლებები')">
+                                    <img src="../../../assets/discount.png" height="25" width="25">
+                                    ფასდაკლებები
+                                </div>
+                                <div class="searched-wrapper" (click)="changeRoute('popular', 'პოპულარულები')">
+                                    <img src="../../../assets/popular.png" width="25" height="25">
+                                    პოპულარულები
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </ng-container>
+           
+            
+     
+  
+    </div>
+    </div>
+</div>
+ <script src="/public/js/ex.mjs" type="module"></script>
+</body>
+</html>

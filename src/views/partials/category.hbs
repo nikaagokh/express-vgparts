@@ -1,0 +1,17 @@
+<div class="category__container">
+    <div class="category__header">
+        <h4 class="category-title">
+            {{category.categories}}
+        </h4>
+    </div>
+    <div class="category__wrapper">
+        {{#each categories}}
+            <a href="/{{../lng}}/subcategory?id={{this.id}}&category={{this.name}}" class="category-card" data-link>
+                <div class="image-wrapper">
+                    <img src="{{curl this.image}}" class="img category-img" priority alt="{{this.name}}">
+                </div>
+                <div class="header-action-text">{{this.name}}</div>
+            </a>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,130 @@
+{
+    "header": {
+        "search":"Search",
+        "filter":"Filter",
+        "favorites":"Favorites",
+        "cart":"Cart",
+        "account":"Account",
+        "categories":"Categories",
+        "georgian":"Georgian",
+        "english":"English"
+    },
+    "category": {
+        "categories":"Categories"
+    },
+    "footer": {
+        "offering":"We offer",
+        "forUsers":"For customers",
+        "contactUs":"Contact us",
+        "workingHours":"Working hours",
+        "carRent":"Car rental",
+        "purchaseParts":"Purchase parts",
+        "purchaseAbroad":"Purchase parts from abroad",
+        "consultation":"Expert consultation",
+        "register":"Register",
+        "authorization":"Authorization",
+        "aboutUs":"About us",
+        "location":"Shandor Peteph, 9",
+        "workingDays":"Monday-Saturday",
+        "workingHour":"10:00AM - 19:00PM"
+    },
+    "login": {
+        "user":"User",
+        "password":"Password",
+        "forgotPassword":"Forget Password?"
+    },
+    "register": {
+        "name":"Name",
+        "surname":"Surname",
+        "email":"Email",
+        "password":"Password",
+        "repeatPassword":"Repeat password",
+        "passwordError":"Passwords does not match",
+        "register":"Register"
+    },
+    "info": {
+        "name":"Name",
+        "condition":"Condition",
+        "description":"Description"
+    },
+    "price": {
+        "inCart":"Add cart",
+        "buy":"buy",
+        "productPrice":"Product price",
+        "productDiscount":"Discount",
+        "productTotal":"Discounted price",
+        "delivery":"delivery",
+        "ebuy":"Online buy",
+        "usd":"$",
+        "gel":"₾"
+    },
+    "slider": {
+        "categories":"Categories",
+        "inStock":"In stock",
+        "outStock":"Out stock",
+        "seeAll":"See all",
+        "discounts":"Discounts",
+        "populars":"Populars",
+        "zoomIn":"Zoom in",
+        "favorites":"Favorites",
+        "cart":"Cart"
+    },
+    "simillars": {
+        "simillars":"Simillar products",
+        "inStock":"In stock",
+        "outStock":"Out stock"
+    },
+    "auth": {
+        "user":"User",
+        "password":"Password",
+        "authorization":"Authorization",
+        "register":"Register",
+        "forgotPassword":"Forget Password?",
+        "userPlaceholder":"Enter user",
+        "passwordPlaceholder":"Enter password"
+    },
+    "errors": {
+        "unauthorized":"You are not Authorized, please sign in or sign up",
+        "empty":"That type of product does not exist"
+    },
+    "filter": {
+        "filter":"Filter",
+        "brand":"Manufacturer",
+        "model":"Model",
+        "year":"Model year",
+        "filterError":"Please fill all fields"
+    },
+    "filtered": {
+
+    },
+    "zoom": {
+        "gallery":"Gallery"
+    },
+    "minicart": {
+        "productsPrice":"Products value",
+        "productsDiscount":"Discount",
+        "totalPrice":"Total value",
+        "quantity":"Quantity",
+        "myCart":"My cart",
+        "buy":"Buy",
+        "detailed":"Detailed",
+        "empty":"Your cart is empty!"
+    },
+    "language": {
+        "georgian":"Georgian",
+        "english":"English"
+    },
+    "fixedPrice": {
+        "cart":"In cart"
+    },
+    "cartPrice": {
+        "ebuy":"Online buy"
+    },
+    "bottom": {
+        "home":"Home",
+        "menu":"Menu",
+        "search":"Search",
+        "cart":"Cart",
+        "user":"User"
+    }
+}

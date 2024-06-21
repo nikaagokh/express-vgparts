@@ -1,0 +1,60 @@
+<section class="category-product-flex">
+          {{#compare products.length '>' 0}}
+          {{#each products as |product|}}
+          <article class="app-slider__card">
+            {{lng}}
+            <a href="/{{../lng}}/product/{{product.id}}" class="app-slider__link" data-link>
+              <div class="app-slider__image-wrapper">
+                <img src="{{#if product.images.[0]}}{{purl product.images.[0]}}{{/if}}" class="app-slider__image"
+                  width="120" height="60">
+              </div>
+              <div class="app-slider__product-desc">
+                <h4 class="app-slider__product-title">{{#if (isEnglish ../lng)}}{{product.nameEng}}{{else}}{{product.nameGeo}}{{/if}}</h4>
+                <div class="app-slider__product-available">
+                  {{#if product.available}}
+                  <i class="material-symbols-outlined app-slider__availability-icon">check</i>
+                  {{#if product.type}}
+                  <span>{{../slider.inStock}}</span>
+                  {{else}}
+                  <span>{{../slider.inStock}}</span>
+                  {{/if}}
+                  {{else}}
+                  <i class="material-symbols-outlined app-slider__not-availability-icon">check_indeterminate_small</i>
+                  {{#if product.type}}
+                  <span>{{../slider.inStock}}</span>
+                  {{else}}
+                  <span>{{../slider.inStock}}</span>
+                  {{/if}}
+                  {{/if}}
+                </div>
+              </div>
+              <div class="app-slider__product-price">
+                {{product.price}}₾
+              </div>
+            </a>
+            <div class="app-slider__actions">
+              <div class="flex">
+                <button class="button button-icon" id="app-slider__zoom">
+                  <i class="material-symbols-outlined">zoom_in</i>
+                  <span class="tooltip">{{../slider.zoom}}</span>
+                </button>
+                <button class="button button-icon" id="app-slider__favorite">
+                  <i class="material-symbols-outlined">favorite</i>
+                  <span class="tooltip">{{../slider.favorite}}</span>
+                </button>
+              </div>
+              <button class="button button-icon" id="app-slider__cart">
+                <i class="material-symbols-outlined">shopping_bag</i>
+                <span class="tooltip">{{../slider.cart}}</span>
+              </button>
+            </div>
+          </article>
+          {{/each}}
+          {{else}}
+          <div class="empty-container">
+            <img src="{{aurl 'empty.jpg'}}" width="200px" height="100px">
+            <div class="empty-text">{{errors.empty}}</div>
+          </div>
+          {{/compare}}
+          <div class="products-hydration" style="display:none;">{{hydration}}</div>
+        </section>

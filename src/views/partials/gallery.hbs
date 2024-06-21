@@ -1,0 +1,13 @@
+<div class="gallery-container">
+    <div class="gallery-product-touch">
+        <div class="product-flex">
+            {{#each product.images}}
+                    <div class="gallery-product-card">
+                        <div class="gallery-image-wrapper">
+                            <img src="{{purl this}}" width="200" height="100">
+                        </div>
+                    </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
