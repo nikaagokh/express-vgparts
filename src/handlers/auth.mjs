@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt'; 
+//import bcrypt from 'bcrypt'; 
 
 const SECRET_KEY = process.env.SECRET_KEY || 'nikagokh';
 
@@ -22,12 +22,12 @@ export const generateAccess = async (user) => {
 }
 
 export const hashPassword = async (password) => {
-    return await bcrypt.hash(password, 12);
+    //return await bcrypt.hash(password, 12);
 }
 
 export const comparePassword = async (password, hashedpassword) => {
     console.log(password);
     console.log(hashedpassword);
-    return await bcrypt.compare(password, hashedpassword);
+    //return await bcrypt.compare(password, hashedpassword);
 }
 
