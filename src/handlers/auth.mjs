@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import * as bcrypt from 'bcrypt'; 
+import bcrypt from 'bcrypt'; 
 
 const SECRET_KEY = process.env.SECRET_KEY || 'nikagokh';
 
