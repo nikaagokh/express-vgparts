@@ -12,7 +12,7 @@ import themeRouter from './theme.mjs';
 
 
 const router = Router();
-
+router.use('/', (req, res) => res.send('abc'));
 router.use(viewRouter);
 router.use('/api/theme', themeRouter);
 router.use('/api/lng', languageRouter);
