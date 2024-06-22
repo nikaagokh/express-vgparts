@@ -24,10 +24,10 @@ router.get("/", (req, res) => {
     const size = req.cookies.size;
     console.log('size' + size);
     Promise.all([
-        axios.get(`http://localhost:3001/${lng}/api/product/discounted?page=1&limit=12`),
-        axios.get(`http://localhost:3001/${lng}/api/product/prius?page=1&limit=12`),
-        axios.get(`http://localhost:3001/${lng}/api/category/roots`),
-        axios.get(`http://localhost:3001/${lng}/api/product/popular?page=1&limit=12`),
+        axios.get(`https://vgpartsa.up.railway.app/${lng}/api/product/discounted?page=1&limit=12`),
+        axios.get(`https://vgpartsa.up.railway.app/${lng}/api/product/prius?page=1&limit=12`),
+        axios.get(`https://vgpartsa.up.railway.app/${lng}/api/category/roots`),
+        axios.get(`https://vgpartsa.up.railway.app/${lng}/api/product/popular?page=1&limit=12`),
     ]).then(([v1,v2,v3, v4]) => {
         const {rows:discounts} = v1.data.response;
         const {rows:priuses} = v2.data.response;

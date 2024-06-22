@@ -139,7 +139,6 @@ export const getProductsByFilter = async (yearIds, page=1) => {
 }
 
 export const getProductsByDiscount = async (page=1, limiti) => {
-    console.log(123);
     const limitNumber = limiti === 0 ? limit : limiti;
     
     const sql = `
