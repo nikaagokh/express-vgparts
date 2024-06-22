@@ -7,28 +7,23 @@ const router = Router();
 //const resource = i18next.getResource(lng, 'header');
 
 router.get("/", (req, res) => {
-    console.log('aeeeeeeeeeeeee');
     const lng = req.language;
-    console.log(lng);
     const header = req.t('header');
     const category = req.t('category');
     const slider = req.t('slider');
     const sliderd = req.t('sliderd');
     const bottom = req.t('bottom');
     const footer = req.t('footer');
-    console.log(slider);
     const mode = req.cookies.mode;
-    console.log(mode);
     const reqPath = req.url;
-    console.log('path' + reqPath);
     const size = req.cookies.size;
-    console.log('size' + size);
     Promise.all([
         axios.get(`https://vgpartsa.up.railway.app/${lng}/api/product/discounted?page=1&limit=12`),
         axios.get(`https://vgpartsa.up.railway.app/${lng}/api/product/prius?page=1&limit=12`),
         axios.get(`https://vgpartsa.up.railway.app/${lng}/api/category/roots`),
         axios.get(`https://vgpartsa.up.railway.app/${lng}/api/product/popular?page=1&limit=12`),
     ]).then(([v1,v2,v3, v4]) => {
+        console.log(v1);
         const {rows:discounts} = v1.data.response;
         const {rows:priuses} = v2.data.response;
         const {rows:populars} = v4.data.response;

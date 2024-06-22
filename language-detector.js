@@ -3,7 +3,7 @@ const definedLanguages = ['en', 'ka'];
 const LanguageDetector = (req, res, next) => {
     console.log(req.path);
     const segments = req.path.split('/');
-    
+    console.log(segments);
     console.log(segments);
     if(segments.length > 1 && isLanguageCode(segments[1])) {
         console.log(2);

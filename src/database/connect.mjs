@@ -9,9 +9,10 @@ export const pool = mysql.createPool({
     password:process.env.MYSQL_PASSWORD
 }).promise();
 */
+
 export const pool = mysql.createPool({
-    host:'roundhouse.proxy.rlwy.net',
+    host:'viaduct.proxy.rlwy.net',
     database:'railway',
     user:'root',
-    password:'bhbEsyQrKgegxUEQRwZpkmLbPqgvlEMM'
+    password:'HDabQDdCkirodnwEFFbSGStCQNvBciSS'
 }).promise();

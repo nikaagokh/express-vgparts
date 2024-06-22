@@ -54,7 +54,9 @@ app.use('/public', express.static(path.resolve(__dirname, "public")));
 app.use('/lng', express.static(path.resolve(__dirname, "locales")));
 
 configureHbs();
-
+app.get('/', (req, res) => {
+    res.redirect('/ka/');
+})
 app.use(LanguageDetector);
 app.use(i18nextMiddleware.handle(i18next));
 app.use(cookieParser());
