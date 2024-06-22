@@ -10,7 +10,7 @@ const LanguageDetector = (req, res, next) => {
         req.url = req.url.substring(req.url.indexOf('/', req.url.indexOf('/') + 1));
     } else {
         req.language = 'en';
-        req.url = '/';
+        //req.url = '/';
     } 
     console.log(req.url);
     next();

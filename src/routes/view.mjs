@@ -9,15 +9,20 @@ const router = Router();
 router.get("/", (req, res) => {
     console.log('aeeeeeeeeeeeee');
     const lng = req.language;
+    console.log(lng);
     const header = req.t('header');
     const category = req.t('category');
     const slider = req.t('slider');
     const sliderd = req.t('sliderd');
     const bottom = req.t('bottom');
     const footer = req.t('footer');
+    console.log(slider);
     const mode = req.cookies.mode;
+    console.log(mode);
     const reqPath = req.url;
+    console.log('path' + reqPath);
     const size = req.cookies.size;
+    console.log('size' + size);
     Promise.all([
         axios.get(`http://localhost:3001/${lng}/api/product/discounted?page=1&limit=12`),
         axios.get(`http://localhost:3001/${lng}/api/product/prius?page=1&limit=12`),
