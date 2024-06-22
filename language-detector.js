@@ -9,11 +9,11 @@ const LanguageDetector = (req, res, next) => {
         req.language = segments[1];
         req.url = req.url.substring(req.url.indexOf('/', req.url.indexOf('/') + 1));
     } else {
-
         req.language = 'en';
         req.url = '/';
     } 
-    //next();
+    console.log(req.url);
+    next();
 }
 
 const isLanguageCode = (code) => {

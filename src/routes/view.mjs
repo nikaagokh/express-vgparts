@@ -7,6 +7,7 @@ const router = Router();
 //const resource = i18next.getResource(lng, 'header');
 
 router.get("/", (req, res) => {
+    console.log('aeeeeeeeeeeeee');
     const lng = req.language;
     const header = req.t('header');
     const category = req.t('category');
